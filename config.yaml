@@ -1,0 +1,38 @@
+simulation:
+  duration: 180
+  seed: 42
+network:
+  type: "synthetic"
+  synthetic:
+    layout: "grid"
+    width: 6
+    height: 5
+    node_spacing: 1.0
+output:
+  dir: "outputs"
+travel_time:
+  time_step_min: 15
+  filename: "travel_times.csv"
+  base_speed_kmph: 18.0
+  peak_speed_kmph: 12.0
+  peak_hours:
+    - [8, 10]
+    - [17, 19]
+  speed_noise_std: 0.0
+orders:
+  filename: "orders.csv"
+  n_orders: 200
+  p_center: 0.25
+  # 如果你想指定中心节点（可选），比如 grid 6x5 时中心大概在 15：
+  # center_node: 15
+  hour_weights: [1,1,1,1,1,1,2,3,4,4,3,2,2,2,2,3,4,4,3,2,1,1,1,1]
+riders:
+  filename: "riders.csv"
+  n_riders: 30
+  p_center: 0.25
+  earliest_start_min: 0
+  latest_start_min: 120
+  min_shift_min: 60
+  max_shift_min: 180
+  speed_factor_options: [0.8, 1.0, 1.2]
+  speed_factor_prob: [0.2, 0.6, 0.2]
