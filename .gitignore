@@ -18,3 +18,4 @@ outputs/
 # exports 
 # *.csv
 # *.json
+requirements_freeze_snapshot.txt
